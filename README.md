@@ -1,6 +1,7 @@
 Check Process Memory
 ====================
 
+
 Description
 -----------
 
@@ -11,7 +12,7 @@ defined memory limits.  The limits are defined below:
   3. exits status code 2 if a process equals or exceeds 15GB
   4. in the case of (2) and (3), also return the offending process name
 
-### A Word About memory
+### A Word About Memory
 -----------------------
 The process memory check will use the ps command and sort using the Resident
 Set Size. RSS doesn't include swap memory but does include the memory
@@ -53,6 +54,7 @@ need to adjust the low and high limits with the options.
 
 Usage
 -----
+
 This is the BASH usage summary. The Python is very similar in usage. If you
 leave out any options, the defaults will be used. If your defined lower limit
 is higher than the default/defined high limit, then the script will exit with
@@ -97,6 +99,33 @@ These scripts were tested on the following machines:
 The scripts have not been tested on OSX nor using python version 3.X. One would
 need to convert a few of the python print cmds and bash ps commands if wanting
 to run on a MAC or using python 3.X.
+
+
+Testing the Scripts
+-------------------
+
+A script was used to test with various values for high and low and few bugs
+were identified and corrected. The output of the test script unfortunately is
+cryptic unless understand and go through what each command is checking. In
+addition to testing values, a speed test was conducted between the BASH and
+python script. The python script is approximately 40% faster than the BASH
+script.  A sample of the time it takes to run each script is given below:
+
+[rtzeng@hills processMemChk]$ time ./check_proc_mem.sh
+OK-no process exceeds 10GB memory usage
+
+real	0m0.068s
+user	0m0.020s
+sys	0m0.041s
+[rtzeng@hills processMemChk]$
+
+[rtzeng@hills processMemChk]$ time ./check_proc_mem.py
+OK-no process exceeds 10GB memory usage
+
+real	0m0.042s
+user	0m0.014s
+sys	0m0.026s
+[rtzeng@hills processMemChk]$
 
 
 Bug Reporting and Enhancements
