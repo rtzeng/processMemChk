@@ -111,21 +111,23 @@ addition to testing values, a speed test was conducted between the BASH and
 python script. The python script is approximately 40% faster than the BASH
 script.  A sample of the time it takes to run each script is given below:
 
-[rtzeng@hills processMemChk]$ time ./check_proc_mem.sh
-OK-no process exceeds 10GB memory usage
+       BASH timed run:
+             [rtzeng@hills processMemChk]$ time ./check_proc_mem.sh
+             OK-no process exceeds 10GB memory usage
+             
+             real	0m0.068s
+             user	0m0.020s
+             sys	0m0.041s
+             [rtzeng@hills processMemChk]$
 
-real	0m0.068s
-user	0m0.020s
-sys	0m0.041s
-[rtzeng@hills processMemChk]$
-
-[rtzeng@hills processMemChk]$ time ./check_proc_mem.py
-OK-no process exceeds 10GB memory usage
-
-real	0m0.042s
-user	0m0.014s
-sys	0m0.026s
-[rtzeng@hills processMemChk]$
+       Python timed run:
+             [rtzeng@hills processMemChk]$ time ./check_proc_mem.py
+             OK-no process exceeds 10GB memory usage
+             
+             real	0m0.042s
+             user	0m0.014s
+             sys	0m0.026s
+             [rtzeng@hills processMemChk]$
 
 
 Bug Reporting and Enhancements
