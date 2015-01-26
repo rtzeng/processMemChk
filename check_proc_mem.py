@@ -64,8 +64,6 @@ def __main__():
         opts, args = getopt.getopt(sys.argv[1:], "l:h:", ["help", "low=",\
             "high="])
     except getopt.GetoptError:
-        # print help information and exit:
-        #print str(err) # will print something like "option -a not recognized"
         usage("check arguments")
         sys.exit(3)
 
@@ -105,11 +103,11 @@ def __main__():
             sys.exit(0)
         elif int(proc[0]) >= low_limit and int(proc[0]) < high_limit:
             # greater/EQUAL to low or less than but not equal to high limit
-            print "WARNING-process %s between %s - %sGB usage" % (proc[1],\
+            print "WARNING-process %s between %s-%sGB usage" % (proc[1],\
                 low_GB, high_GB)
             sys.exit(1)
         else:
-            # mem_num not true for any of above so EQUAL/greater than high limit
+            # mem_num not true for above so EQUAL/greater than high limit
             print "CRITICAL-process %s equal or exceeds %sGB usage" % \
                 (proc[1], high_GB)
             sys.exit(2)

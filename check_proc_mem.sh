@@ -105,7 +105,7 @@ ps -eo rss=,comm= --sort -rss | while read line; do
         exit 0
     elif [ ${mem_num} -ge ${low_limit} -a ${mem_num} -lt ${high_limit} ]; then
         # greater/EQUAL to the lower or less than but not equal to high limit
-        echo "WARNING-process ${ps_name} between ${low_GB} - ${high_GB}GB usage"
+        echo "WARNING-process ${ps_name} between ${low_GB}-${high_GB}GB usage"
         exit 1
     else
         # mem_num not true for any of above so EQUAL/greater than high limit
