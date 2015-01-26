@@ -16,7 +16,7 @@ defined memory limits.  The limits are defined below:
 -----------------------
 The process memory check will use the ps command and sort using the Resident
 Set Size. RSS doesn't include swap memory but does include the memory
-that is shared with other processes. Linux loads libraries once into memory.
+that is shared with other processes. Linux loads libraries into memory one time.
 If multiple processes use the same library, then the acutal memory usage will
 be smaller when you subtract the library's memory usage. It's debateable
 whether the ps command will produce accurate results. However, with many
@@ -48,7 +48,7 @@ Installation
 ------------
 
 Once downloaded or cloned onto a Linux machine, make sure the scripts are
-executable. Depending on how much memory you have on your machine, one will 
+executable. Depending on how much memory you have on your machine, one will
 need to adjust the low and high limits with the options.
 
 
@@ -96,23 +96,25 @@ These scripts were tested on the following machines:
   * CentOS 6.5 and RHEL 6.6 using python version 2.6.6
   * Ubuntu 14.04.1 LTS using python version 2.7.6
 
-The scripts have not been tested on OSX nor using python version 3.X. One would
-need to convert a few of the python print cmds and bash ps commands if wanting
-to run on a MAC or using python 3.X.
+The scripts have not been tested on OSX nor using python version 3.X. You would
+need to convert a few of the python print cmds and bash ps commands if you
+want to run on a MAC or want to use python 3.X.
 
 
 Testing the Scripts
 -------------------
 
 A descending sort of the RSS values from the ps command results in the process
-that has the highest memory usage. Therefore the scripts don't need to loop
-through each process against the low/high limits. A script was used to test
-with various low and high values and few bugs were identified and corrected.
-The output of the test script unfortunately is cryptic unless you go through
-what each command is checking. In addition to testing values, a speed test was
-conducted between the BASH and python script. The python script is
-approximately 40% faster than the BASH script. A sample of the time it takes
-to run each script is given below:
+that has the highest memory usage. I coded in a loop to loop through the
+process list, but as an enhancement I don't think the loop is needed. This
+is though is on the TODO list below.
+
+A script was used to test with various low and high values and few bugs were
+identified and corrected. The output of the test script unfortunately is 
+cryptic unless you go through what each command is checking. In addition to
+testing values, a speed test was conducted between the BASH and python script.
+The python script is approximately 40% faster than the BASH script. A small
+sample of the time it takes to run each script is given below:
 
        BASH timed run:
              [rtzeng@hills processMemChk]$ time ./check_proc_mem.sh
@@ -138,8 +140,9 @@ Bug Reporting and Enhancements
 
 Please report any bugs to <rtzeng@yahoo.com>. Please also contact me if you see
 areas for enhancement. The following is a TODO list that I've come up with:
-  1. adjust units of limits to MB (both python and BASH)
+  1. adjust units of limits to MB (both)
   2. bug in empty argument for a single option lower limit (python)
   3. use getopt to parse through BASH options (BASH)
+  4. investigate if a loop is needed to look through the process list (both)
 
 tl;dr
