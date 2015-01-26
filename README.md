@@ -62,9 +62,9 @@ machine's RAM in kB. If you leave a limit number out, the script will exit with
 an error.
 
 Usage: check_proc_mem.sh [-l low_limit] [-h high_limit] [--help]
-  * -l, --low   => optional-lower limit memory in GB (10 default)
-  * -h, --high  => optional-higher limit memory in GB (15 default)
-  * --help      => prints usage
+    -l, --low   => optional-lower limit memory in GB (10 default)
+    -h, --high  => optional-higher limit memory in GB (15 default)
+    --help      => prints usage
 
        examples:  ./check_proc_mem.sh
                   ./check_proc_mem.sh -l 8
@@ -74,9 +74,9 @@ Usage: check_proc_mem.sh [-l low_limit] [-h high_limit] [--help]
                   ./check_proc_mem.sh --help
 
 Usage: check_proc_mem.py [-l low_limit] [-h high_limit] [--help]
-  * -l, --low   => optional-lower limit memory in GB (10 default)
-  * -h, --high  => optional-higher limit memory in GB (15 default)
-  * --help      => prints usage
+     -l, --low   => optional-lower limit memory in GB (10 default)
+     -h, --high  => optional-higher limit memory in GB (15 default)
+     --help      => prints usage
 
        examples:  ./check_proc_mem.py
                   ./check_proc_mem.py 8
