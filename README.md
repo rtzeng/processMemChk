@@ -32,8 +32,7 @@ An option to change the limits can be passed to the scripts. While testing the
 scripts on machines with less than 15 GB of RAM, the results produced a false
 negative in that the reported memory usage would never reach the high limit of
 15 GB. Thus, the decision was made to include options to define the low and
-high limit based on the server's configured/installed RAM. The options make
-the scripts convenient to run on machines with different RAM sizes.
+high limit based on the server's actual configured/installed RAM.
 
 
 Downloading
@@ -41,7 +40,7 @@ Downloading
 
 The scripts are available on github.com.
 
-  [link]https://github.com/rtzeng/processMemChk.git
+  https://github.com/rtzeng/processMemChk.git
 
 
 Installation
@@ -63,9 +62,9 @@ machine's RAM in kB. If you leave a limit number out, the script will exit with
 an error.
 
 Usage: check_proc_mem.sh [-l low_limit] [-h high_limit] [--help]
-       -l, --low   => optional-lower limit memory in GB (10 default)
-       -h, --high  => optional-higher limit memory in GB (15 default)
-       --help      => prints usage
+  * -l, --low   => optional-lower limit memory in GB (10 default)
+  * -h, --high  => optional-higher limit memory in GB (15 default)
+  * --help      => prints usage
 
        examples:  ./check_proc_mem.sh
                   ./check_proc_mem.sh -l 8
@@ -75,12 +74,12 @@ Usage: check_proc_mem.sh [-l low_limit] [-h high_limit] [--help]
                   ./check_proc_mem.sh --help
 
 Usage: check_proc_mem.py [-l low_limit] [-h high_limit] [--help]
-       -l, --low   => optional-lower limit memory in GB (10 default)
-       -h, --high  => optional-higher limit memory in GB (15 default)
-       --help      => prints usage
+  * -l, --low   => optional-lower limit memory in GB (10 default)
+  * -h, --high  => optional-higher limit memory in GB (15 default)
+  * --help      => prints usage
 
        examples:  ./check_proc_mem.py
-                  ./check_proc_mem.pyl 8
+                  ./check_proc_mem.py 8
                   ./check_proc_mem.py --low 8
                   ./check_proc_mem.py -l 8 -h 12
                   ./check_proc_mem.py --low 8 --high 12
