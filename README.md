@@ -104,7 +104,8 @@ Bug Reporting and Enhancements
 
 Please report any bugs to <rtzeng@yahoo.com>. Please also contact me if you see
 areas for enhancement. The following is a TODO list that I've come up with:
-  1. adjust units of limits to MB
-  2. bug in empty argument for a single option lower limit
+  1. adjust units of limits to MB (both python and BASH)
+  2. bug in empty argument for a single option lower limit (python)
+  3. use getopt to parse through BASH options (BASH)
 
 tl;dr
