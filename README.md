@@ -104,12 +104,15 @@ to run on a MAC or using python 3.X.
 Testing the Scripts
 -------------------
 
-A script was used to test with various values for high and low and few bugs
-were identified and corrected. The output of the test script unfortunately is
-cryptic unless understand and go through what each command is checking. In
-addition to testing values, a speed test was conducted between the BASH and
-python script. The python script is approximately 40% faster than the BASH
-script.  A sample of the time it takes to run each script is given below:
+A descending sort of the RSS values from the ps command results in the process
+that has the highest memory usage. Therefore the scripts don't need to loop
+through each process against the low/high limits. A script was used to test
+with various low and high values and few bugs were identified and corrected.
+The output of the test script unfortunately is cryptic unless you go through
+what each command is checking. In addition to testing values, a speed test was
+conducted between the BASH and python script. The python script is
+approximately 40% faster than the BASH script. A sample of the time it takes
+to run each script is given below:
 
        BASH timed run:
              [rtzeng@hills processMemChk]$ time ./check_proc_mem.sh
